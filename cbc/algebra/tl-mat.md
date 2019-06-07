@@ -71,6 +71,15 @@ $M_{EE^'}f = mf$
 
 ## Prop
 
+$f : V \to W$ es *iso* si y sólo si $M_{BB^'}f$ es inversible para algunas
+bases $B$ y $B'$
+
+## Prop
+
+El rango de $M_{BB^'}f$ no depende de la elección de bases $B$, $B'$
+
+## Prop
+
 Podemos hacer esto para las matrices de $R^{m \times n}$ tomándonos su base
 canónica
 
