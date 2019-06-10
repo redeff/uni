@@ -63,3 +63,10 @@ Sean $B$, $B'$ bases de $V$, luego se **define**:
 $C_{BB'} = M_{BB^'}\;id  \;\in R^{n \times n}$, es decir
 
 $C_{BB^'} = \left[(B_i)_{B^'}\mid \dots\right]$
+
+## Componer con cambios de base
+
+Si se tiene $g : V \to U$ y $f : U \to W$, luego, para cualquiera
+$A$ base de $V$, bases $B$, $D$ de $U$, y base $F$ de $W$, luego:
+
+$M_{AF}\;(f \circ g) = M_{DF} \;f \cdot C_{BD} \cdot M_{AB} \; g$
