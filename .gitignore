@@ -1,0 +1,12 @@
+*
+
+!*.md
+!*.tex
+!.gitignore
+
+*.aux
+*.fdb_latexmk
+*.pdf
+*.gz
+*.log
+*.fls
