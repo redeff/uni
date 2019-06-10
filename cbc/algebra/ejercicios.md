@@ -214,3 +214,45 @@ condición
 Sabemos $Im f = \langle(-2, -5, -8)\; (1, 1, k)\; (0, k, 2)\rangle$
 
 Para hallar el núcleo podemos hallar las soluciones de $\left[M_{BE}\mid\bar0\right]$, y esos vectores multiplicarlos por $C_{BE}$ para pasarlos a la canónica y compararlos con $Im \; f$
+
+
+## Ejercicio 2
+Sea $f : R^4 \to R^3$ TL, tal que $mf = \begin{bmatrix}
+1 & 1 & -1 & 0 \\
+0 & 1 & 3 & 0 \\
+1 & 2 & 2 & 1
+\end{bmatrix}$
+
+a. $S = \langle(1,0,1,0);(-1,2,0,0)\rangle$ Hallar una base de $fS$
+
+    $fS = \langle fS_1 ; fS_2\rangle$
+
+b. Hallar $Imf$
+
+    Necesitamos $\langle fB_1 \dots fB_n\rangle$, pero estos generadores son
+    las columnas de $mf$
+
+    Para hallar una base de $Imf$ tenemos que ver si las columnas son LI, es
+    decir escalonamos $(mf)^T$
+
+    En particular $Dim (Im f) = Rg(mf)^T = Rg(mf)$
+
+c. Hallar una base de $Nuf$
+
+    Tenemos que resolver el sistema dado por $\left[mf | 0_{R^m}\right]$
+
+## Ejercicio 3
+
+Tenemos $f : R^3 \to R^3$ TL, $mf = \begin{bmatrix}
+2 & 0 & 0 \\
+3 & -1 & 1 \\
+1 & 2 & 2
+\end{bmatrix}$.
+Calcular $DimImf$
+
+$DimImf = Rg(mf)$
+
+Luego podemos calcular la dimensión de la imagen, que nos permite ver si $f$
+es **epimorfismo** Además como la dimensión del dominio y el codominio son
+iguales, sabemos que $f$ es **isomorfismo**
+
