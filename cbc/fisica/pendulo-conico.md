@@ -1,0 +1,1 @@
+# Péndulo cónico

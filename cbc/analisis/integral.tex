@@ -1,0 +1,114 @@
+\documentclass{article}
+\title{Integrales}
+\date{}
+\author{}
+\everymath{\displaystyle}
+\usepackage{mathtools}
+\begin{document}
+\maketitle
+\section{Teorema Fundamental de Cálculo}
+Sea \(
+F(x) = \int_a^xf(t) \; dt
+\), luego: \(
+	f
+\) contúnua implica \(
+F'(x) = f(x)
+\)
+\subsection{Composición}
+Si tenemos por ejemplo \(
+F(x) = \int_0^{g(x)}f(t) \; dt
+\), luego \(
+F'(x) = f(g(x)) \cdot g'(x)
+\) si $f$ continua, $g$ derivable
+\subsection{Partir una integral}
+Tenemos \(
+\int_a^b f(t)\;dt = \int_a^0 f(t)\;dt + \int_0^b f(t)\;dt
+\)
+\subsection{Dar vuelta una integral}
+Tenemos \(
+\int_a^b f(t) \; dt = -\int_b^a f(t) \; dt
+\)
+\subsection{Juntando todo}
+\(
+F(x) = \int_{s(x)}^{r(x)} f(t) \; dt
+\) con $f$ cont y $s$, $r$ deriv, luego,
+\[
+F'(x) = f(r(x)) \cdot r(x) - f(s(x)) \cdot s'(x)
+\]
+\section{Def Primitivas}
+$G(x)$ es una primitiva de $f(x)$ si $G'(x) = f(x)$
+\subsection{Todas las primitivas}
+Si $G(x)$ es una primitiva de $f(x)$, luego todas las primitivas de $f(x)$
+son de la forma $G(x) + c$ para algún $c\in R$
+\section{Integrales definidas}
+Si $G'(x) = f$ y $f$ continua, luego la integral
+\(
+A(x) = \int_a^xf(t) \; dt
+\) se puede escribir como $A(x) = G(x) + c$ para algún $c$, además sabemos
+$A(a) = 0$, luego $c = -G(a)$. Tenemos entonces:
+\subsection{Regla de Barrow}
+\[
+	A(b) = \int_a^b f(b) \; dt = G(b) - G(a) \text{ Para $G$ primitiva de $f$}
+\]
+Esa integral se llama integral definida, cuando los extremos son números
+\subsection{Notación}
+Se puede escribir \(
+\left. \int_a^b f'(x)\; dx = f(x)\right| _a^b
+\)
+\section{Integral Indefinida}
+Se nota \(
+\int f'(x) \; dx = f(x) + c
+\) para describir todas las primitivas
+\subsection{Tabla de primitivas}
+\[
+	x^n \to \frac{x^{n+1}}{n+1} \text{ Si $x \neq -1$}
+\]
+
+\[
+	x^{-1} \to \ln |x|
+\]
+
+\[
+	e^x \to e^x
+\]
+
+\section{Métodos para calcular integrales}
+\subsection{Por sustitución}
+Por regla de la cadena, tenemos: \(
+\int f'(g(x)) \cdot g'(x) = f \circ g
+\)
+\subsubsection{Ejemplo}
+Queremos calcular \(
+\int 2x \cdot \cos(x^2 +1 )
+\). Tomamos $fx = \sin x$, $g x = x^2 + 1$, luego por regla de la cadena:
+\[
+	\int 2x \cdot \cos(x^2 +1 ) = \int f'(g(x)) \cdot g'(x) = f \circ g =
+	\sin (x^2 + 1)
+\]
+\subsubsection{Notación}
+El ejercicio anterior se puede hacer un cambio de variable $u = x^2 + 1$, y
+se tiene $u'(x) = 2x \iff du = 2x \; dx$, entonces la integral queda
+
+\[
+	\int 2x \cdot \cos(x^2 +1 ) = \int du \cdot \cos u = \sin u = \sin
+	(x^2+1)
+\]
+
+\subsubsection{En general para divisiones tenemos}
+Si tenemos \(
+\int \frac{f'(x)}{f(x)} \; dx
+\), luego tomemos $u = f(x)$, tenemos $du = f'(x) \; dx$, entonces
+\(
+\int \frac{f'(x)}{f(x)} \; dx = \int \frac{1}{u} \; du = \ln |u| = \ln |f(x)|
+\)
+
+\subsubsection{Y para productos}
+Si tenemos \(
+\int f'(x)\cdot f(x) \; dx
+\), luego tomemos $u = f(x)$, tenemos $du = f'(x) \; dx$, entonces
+\(
+\int f'(x) \cdot f(x) \; dx = \int u \; du = \frac{1}{2}u^2 =
+\frac{1}{2}f(u)^2
+\)
+
+\end{document}
