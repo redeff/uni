@@ -1,0 +1,104 @@
+\documentclass{article}
+\everymath{\displaystyle}
+\usepackage{mathtools}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{15pt}
+\title{Polinomios}
+\date{}
+\begin{document}
+\maketitle
+Un polinomio es una combinacion lineal finita entre $1$, $x$, $x^2$, $\dots$,
+$x^n$, $\dots$, es decir, todos losde la forma:
+\(
+P(x) = a_0x^0 + a_1x^1 + \dots + a_nx
+\), donde $a_i$ son los coeficientes.
+
+Los polinomios $P$ tales que sus coeficientes pertenezcan a un conjunto $V$
+se denominan $V[x]$. Tenemos por ejemplo $R[x]$, $Q[x]$, $C[x]$, etc.
+Generalmente no trabajamos con $Z[x]$, porque $Z$ no es un cuerpo
+
+Notemos que suma y producto por escalar $v \in V$ están cerradas en $V[x]$
+
+Si $P(x) = \sum a_ix^i$ y $a_n \neq 0$, luego el grado $\deg P$ es $n$, y
+el coeficiente principal es $a_n$. El polinomio nulo $P(x) = 0$ no tiene
+grado.
+
+Tenemos $\deg (P+Q) \leq \max \{\deg P, \deg Q\}$
+
+\section{Producto}
+
+El producto entre polinomios se hace usando la distributiva. Se cumple
+además que $\deg P\cdot Q =\deg P + \deg Q$, con $P, Q \neq 0$
+
+\section{Igualdad}
+
+Dos poly son iguales iff son iguales coeficiente a coeficiente
+
+\section{Especialización}
+Si $\sum a_ix^i = P \in K[x]$, y $z \in K$, luego la especialización de $P$
+en $z$ es \[P(z) = \sum a_iz^i \in K\]
+
+\section{Igualdad dado Igualdad de especializaciones}
+Si dos polinomios $P, Q\in K[x]$ y existen $a_0, \dots, a_{n+1}$ distintos
+tales que $P(a_i) = Q(a_i) \; \forall i$, luego $P = Q$
+
+\section{Raíces}
+Si $P\in K[x]$, $P(z) = 0$ se dice que $z$ es raíz de $P$. Una raíz
+puede ``írsete'' de $K$
+
+\section{División de Polys}
+\fbox{
+\parbox{\textwidth}{
+Dados dos poly $P, Q \in K[x]$, $Q \neq 0$, luego existen únicos poly $C, R
+\in K$, tales que
+\[P = Q \cdot C + R\]
+
+con $\deg R < \deg Q$ (o $R = 0$)
+}}
+
+La división se la computa igual que en enteros, ordenando los dos polys (P y
+Q) y completando los espacios vaíos que faltan
+
+Sabemos también que si $\phi_i$ son las raíces de $Q$, luego por la fórmula
+del cociente tenemos $P(\phi_i) = R(\phi_i) \;\forall i$. Si $Q$ tiene $\deg
+Q$ raíces distintas, luego esa información alcanza para resolver el sistema
+y sacar $R$ (Ya que $\deg R < \deg Q$)
+
+\subsection{Divisibilidad de Polinomios}
+Decimos que $P\mid Q \iff \exists R : Q = P \cdot R$
+
+\subsection{Teo del Resto}
+Si $P \in K[x]$, y $Q(x) = x - r$, luego el resto de la división
+$P(x) \div Q(x)$ es un polinomio constante, y esa constante es $P(r)$
+
+Esto implica que $r$ es raíz de $P$ iff $(x - r) \mid P(x)$. Es decir, si
+encuentro una raíz de $P$, lo puedo separar en un factor de grado $1$ y uno
+de grado $\deg P - 1$
+
+\subsection{Ruffini}
+Si $P(x) = \sum^n a_ix^i$, y $P(r) = 0$, luego se puede hallar el polinomio
+\[
+\sum ^{n-1} b_ix^i = Q(x) = \frac{P(x)}{(x - r)}
+\]
+haciendo la recurrencia \(
+\begin{cases}
+b_n = 0 \\
+b_{i-1} = a_i + r \cdot b_{i}
+\end{cases}
+\)
+
+$b_{-1}$ debería ser $0$, osinó $r$ no era raíz
+
+\section{Teorema Fundamental del Álgebra}
+Para todo $P \in C[x]$, con $\deg P \geq 1$, existe $z \in C$ tal que $P(z)
+= 0$. Aplicando recursivamente, sabemos que existen $\varphi_1, \dots,
+\varphi_{n}$ Tal que $\varphi_i$ son raíces de $P$ y
+\[P(x) = a_n \cdot \prod (x - \varphi_i)\]
+Esta es la factorización en $C[x]$
+
+\section {Rational Roots Theorem (Teo de Gauss)}
+Si $P \in Z[x]$, con coeficiente principal distinto de 0,
+luego para toda raíz racional de $P$ irreducible
+$\frac{\alpha}{\beta}$, luego $\alpha \mid a_0$ y $\beta \mid a_n$
+(No necesariamente existen raíces racionales)
+\end{document}

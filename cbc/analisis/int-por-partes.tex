@@ -1,0 +1,77 @@
+\documentclass{article}
+\everymath{\displaystyle}
+\usepackage{mathtools}
+\begin{document}
+\section{Integral por Partes}
+Tenemos:
+\(
+(f(x) \cdot g(x))' = f'(x)g(x) + f(x)g'(x) \iff
+\)
+
+\(
+\int f(x) g(x) \; dx = f(x)g(x) - \int f(x)g(x) \; dx
+\)
+
+\subsection{Ejemplos}
+\subsubsection{$xe^x$}
+
+\(
+	\int x e^x dx = xe^x - \int 1e^x \; dx = xe^x - e^x
+\)
+
+\subsubsection{$\ln x$}
+
+\(
+\int (x^2 + x) \ln x \; dx = \left(\frac{x^3}{3} + \frac{x^2}{2}\right) \ln
+x - \int \frac{1}{x} \left(\frac{x^3}{3} + \frac{x^2}{2}\right) \; dx =
+\)
+
+\(
+\left(\frac{x^3}{3} + \frac{x^2}{2}\right) \ln x  - \left(\frac{x^3}{9} +
+\frac{x^2}{4}\right)
+\)
+
+\subsubsection{$\sin x$}
+\(
+	\int x^2 \sin x \; dx = -x^2 \cos x + 2 \int x \cos x \; dx
+\)
+
+\(
+\int x \cos x \; dx = x \sin x + 2(x \sin x +  \cos x)
+\)
+
+Luego,
+
+\(
+	\int x^2 \sin x \; dx = -x ^2 \sin + 2(x \sin x + \cos x)
+\)
+
+\subsubsection{$\ln x$}
+\(
+\int \ln x = \int 1 \cdot \ln x = x \ln x - \int x \frac{1}{x} = x \ln x - x
+\)
+
+\subsubsection{$e^x \sin x$}
+\(
+	\int e^x \sin x = e^x \sin x - \int e^x \cos x =
+\)
+
+\(
+e^x \sin x - \left[e^x \cos x + \int e^x \sin x\right] \iff
+\)
+
+\(
+\int e^x \sin x = e^x\cdot\frac{\sin x - \cos x}{2}
+\)
+
+\subsubsection{$\cos \sqrt{x}$}
+\(
+\int \cos \sqrt{x} = \int (2u) \cos u \; du = 2\int u \cos u \; du =
+\)
+Ahora usamos por partes,
+
+\(
+2 \left[u \sin u - \int \sin u\right] = 2u \sin u + 2 \cos u = 2\sqrt{x} \cdot
+\sin \sqrt{x} + 2\cos \sqrt{x}
+\)
+\end{document}

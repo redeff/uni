@@ -1,0 +1,41 @@
+\documentclass{article}
+\everymath{\displaystyle}
+\usepackage{mathtools}
+\setlength{\parskip}{20pt}
+\setlength{\parindent}{0pt}
+\title{Relación entre los Coeficientes y sus Raíces}
+\date{}
+\begin{document}
+\maketitle
+\section{Para cuadráticos}
+Tenemos \[(x - r_1)(x - r_2) = x^2 - (r_1+r_2)x + r_1r_2\]
+Luego el opuesto del coeficiente lineal es la suma de las raíces, y el
+independiente es el producto de las raíces.
+
+\section{Para cúbicos}
+Tenemos \[
+	(x - r_1)(x - r_2)(x - r_3) = x^3 - x^2\sum r_i + x\sum r_ir_j -
+	r_1r_2r_3
+	\]
+
+\section{En general}
+\[
+	\prod^n (x - r_i) = \sum_k^n \left((-1)^kx^k\sum_{S \subseteq \{1\dots
+			n\}}^{|S| = n-k} \left(\prod_{i\
+\in S} r_i\right)\right)
+\]
+Es decir,
+\[
+	\frac{a_k}{a_n} = (-1)^k \sum_{S \subseteq \{1\dots
+			n\}}^{|S| = n-k} \left(\prod_{i\
+\in S} r_i\right)
+\]
+\section{Calcular polinomios simétricos}
+Si $a\;b\;c$ son raíces de un polinomio cúbico, tenemos:
+\[a^2+b^2+c^2 = (a+b+c)^2 - 2(ab + bc + ca) = -\left(\frac{a_2}{a_3}\right)^2 -
+2\left(\frac{a_1}{a_3}\right)\]
+
+\[\frac{1}{a} + \frac{1}{b} + \frac{1}{c} = \frac{ab + bc + ca}{abc} =
+	\frac{\frac{a_2}{a_3}}{-\frac{a_0}{a_3}} = -\frac{a_2}{a_0}
+\]
+\end{document}

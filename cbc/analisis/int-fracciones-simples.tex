@@ -1,0 +1,42 @@
+\documentclass{article}
+\everymath{\displaystyle}
+\usepackage{mathtools}
+\begin{document}
+\section{Fracciones Simples}
+Sabemos:
+\(
+\int \frac{A}{x - c} = A \ln |x - c|
+\), entonces vamos a tratar de escribir cosas como suma de términos de esa
+pinta
+
+Si tenemos una función racional con grado de abajo mayor al de arriva, y con
+el polinomio de abajo con raices todas distintas y reales, entonces el sist.
+lineal siempre tiene solución.
+
+\subsection{$\frac{1}{(x-1)(x+3)}$}
+\[
+\int \frac{1}{(x-1)(x+3)} = \int \frac{\frac{1}{4}}{x-1} +
+\frac{-\frac{1}{4}}{x+3} = 
+\]
+\[
+\frac{1}{4} \ln |x-1| - \frac{1}{4} \ln |x+3|
+\]
+
+Para sacar los coeficientes que van arriba, planteamos las ecuaciones e igualamos los polinomios término a término.
+
+\subsection{División de polinomios}
+Sólo se puede hacer ese método cuando el polinomio de arriva tiene grado
+menor al de abajo, entonces se necesita hacer división de polinomios.
+
+Si $P(x)$ y $Q(x) \neq 0$ son polinomios, luego existen únicos $C(x)$ y
+$R(x)$ tal que: \(
+P(x) = Q(x) \cdot C(x) + R(x)
+\) Con \(
+	\deg R < \deg Q
+\)
+
+\subsection{$\frac{x^3+2x}{x^2 - 1}$}
+\(
+\int \frac{x^3 + 2x}{x^2 - 1} = \int x + \int \frac{3x}{x^2-1}
+\), que lo sabemos hacer
+\end{document}

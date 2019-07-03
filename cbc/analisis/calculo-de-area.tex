@@ -1,0 +1,21 @@
+\documentclass{article}
+\everymath{\displaystyle}
+\usepackage{mathtools}
+\begin{document}
+\section{Área entre curvas}
+Si tenemos dos funciones $f : [a; b] \to R$ y $g : [a; b] \to R$ y
+queremos calcular el área encerrada pos las dos curvas en ese intervalo.
+Hay que hallar los puntos de intersección entre $f$ y $g$, luego ver en cada
+intervalo cuál de $f$ y $g$ juega de techo y cual de piso, y finalmente
+planear en cada intervalo \(
+\int_{a_i}^{b_i} t(x) - p(x)
+\), donde $[a_i; b_i]$ es el intervalo entre las raíces y $t$ y $p$ son la
+función piso y la techo resp.
+
+\subsection{Ejemplo}
+Tenemos las curvas $y = x \ln x$, $y = 0$, $x = e$.Tenemos que intersectar
+$x \ln x = 0$ y nos da $x = 1$, entonces queres \(
+\int_1^e (x \ln x - 0) \; dx = \left.\frac{1}{2}x^2\ln x\right|_1^e -
+	\frac{1}{2}\int_1^e x = \frac{e^2 + 1}{4}
+\)
+\end{document}

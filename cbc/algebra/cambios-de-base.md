@@ -1,5 +1,6 @@
 # Hacer que la Matriz de la tranf. sea I
 
+
 Si tenemos $f : V \to W$ *TL iso* y alguna base $B = \{v_1, \dots, v_n\}$,
 entonces tomémonos $B^' = \{fv_i\}$, luego la matriz queda:
 

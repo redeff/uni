@@ -1,0 +1,24 @@
+\documentclass{article}
+\everymath{\displaystyle}
+\usepackage{mathtools}
+\setlength{\parskip}{20pt}
+\setlength{\parindent}{0pt}
+\begin{document}
+\section{Ejercicio 3}
+Hallar todas las raíces de $P(x) = x^4 + 3x^3 + 4x^2+3x+10$ sabiendo que
+alguna de ellas es también raíz de $Q(x) = 2x^3-2x^2-2x-4$.
+
+Para resolver sacamos el resto $R$ de la división $\frac{P}{Q}$, y tenemos
+que $P = Q\cdot C + R$ para algún poly $C$, luego toda raíz común de $P$ y
+$Q$ es también de $R$
+
+Tenemos $R(x) = 9x^2 + 9x + 18 = 9(x^2+x+2)$, que tiene raíces $\frac{-1 \pm
+i\sqrt{7}}{2}$
+
+Luego como alguna raíz de $P$ es raíz de $R$, sabemos que las dos lo son ya
+que tiene coeficientes reales. tenemos:
+\(
+	P(x) = (x^2 + x + 2) \cdot S(x)
+\)
+Para algún $S$, dividimos para hallar $S$ y estamos.
+\end{document}

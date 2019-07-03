@@ -1,0 +1,81 @@
+\documentclass{article}
+\everymath{\displaystyle}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+\begin{document}
+\section{Especializaciones de conjugados}
+tenemos \(
+\overline{P(r)} = P(\overline{r})
+\)
+Para todo $P \in \R[x], r\in \C$
+\subsection{Demo}
+Tenemos \(
+P(r) = \sum a_ir^i
+\iff
+\overline{P(r)} = \sum \overline{a_ir^i} = \sum a_i\overline{r}^i =
+P(\overline{r})
+\)
+\section{Raíces complejas de polinomios en $\R[x]$}
+Para todo $P \in \R[x]$, luego $x \in \C$ es raíz de $P$ sí y solo sí
+$\overline{z}$ es raíz de $P$
+\subsection{Demo}
+Tenemos $P(r) = 0 \iff P(\overline{r}) = \overline{0} = 0$
+\subsection{Corolario}
+Todo poly en $\R[x]$ se puede factorizar en factores de grado a lo sumo $2$
+\subsection{Factorizaciones en $\R[x]$}
+Si tenemos un polinomio $P \in \R[x]$ con raíces complejas $z \neq
+\overline{z}$, luego en la factorización en $\C[x]$ tenemos los factores \(
+(x - z)\cdot (x - \overline{z}) = (x^2 - 2\cdot \Re z + |z|^2)
+\), que es un factor cuadrático irreducible en $\R[x]$
+
+\section{Raíces repetidas}
+Un polinomio $P \in \C[x]$ de grado $n$ puede tener menos de $n$ raíces,
+pero en su factorización en $C[x]$ necesariamente tiene exactamente
+$n$ factores lineales, ya que cada raíz puede aparecer varias veces
+
+Por ejemeplo $P = (x^4 - 1)^2(x^2 - 3x + 2)(x^2-4)(x-3)^5$ tiene $7$ raíces:
+$P(\pm 1, \pm i, \pm 2, 3) = 0$, pero su factorizción es: \[P(x) =
+(x-1)^3(x+1)^2(x-i)^2(x+i)^2(x-2)^2(x+2)(x-3)^5\]
+
+\subsection{Multiplicidad de una raíz}
+Dado $P \in \C[x]$, $a\in \C$, decimos
+\[mult(a, P) = \max \; \{k : (x-a)^k \mid P(x)\}\]
+
+\subsubsection{En $\R[x]$}
+
+Si $P \in R[x]$, luego $mult(z, P) = mult(\overline{z}, P) \quad \forall z \in C$
+
+\subsection{Raíces cuadradas de complejos}
+Si tenemos la ecuación de la forma $w^2 = z$, va a tener dos soluciones, y
+se pueden encontrar haciendo $w = c + di$, $z = a + bi$, tentonces tenemos
+
+\[
+	(c + di)(c + di) = a + bi
+\]
+\[
+	c^2 - d^2 + 2cdi +  = a + bi
+\]
+
+Además $|w|^2 = z$, luego tenemos:
+\[
+	c^2 + d^2 = |z|
+\]
+
+En total tenemos entonces
+\[
+\begin{cases}
+	c^2+d^2 & = |z| \\
+	c^2 - d^2 & = \Re z \\
+	2cd & = \Im z
+\end{cases}
+\]
+
+Con las primeras dos podemos sacar $c^2$ y $d^2$, y con la tercer ecuación
+sacás qué signos poner (va a haber dos posibilidades)
+
+\subsubsection{Forma trigonométrica}
+También podemos plantear $|w| = \sqrt{|z|}$ y $\arg w = \frac{\arg z}{2}$,
+que alcanza para determinar $w$, pero los ángulos quedan feos
+\end{document}

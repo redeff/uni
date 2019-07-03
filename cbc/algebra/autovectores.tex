@@ -1,0 +1,142 @@
+\documentclass{article}
+\everymath{\displaystyle}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+\def\Z{\mathbb{Z}}
+\def\V{\mathbb{V}}
+\def\U{\mathbb{U}}
+\setlength{\parskip}{20pt}
+\setlength{\parindent}{0pt}
+\title{Autovalores y Autovectores (Eigenvalues and Eigenvectors) de TLs}
+\date{}
+\author{}
+\begin{document}
+\maketitle
+\section{Definición de Autovectores y Autovalores}
+dado \(
+	f : \V \to \V
+\) TL, Para todo \(
+v \in \V_{\neq 0}, \lambda \in \R : fv = \lambda \cdot v
+\), decimos que $v$ es un autovector de $f$, con autovalor asociado
+$\lambda$
+
+\section{Hallar Autovalores}
+Si tenemos $Mf$, con $f : \V \to \V$, nos queda resolver la ecuación
+\[
+	Mf\cdot v = \lambda \cdot v
+\]
+\[
+	(Mf - I\lambda)\cdot v = 0_\V
+\]
+Que tiene soluciones no triviales iff $\det \;(Mf - \lambda I) = 0$
+\subsection{Polinomio caracerístico}
+Dado $f : \V \to \V$
+se dice $p_f \; \lambda = \det \; (Mf - \lambda I)$.
+Este polinomio en $\lambda$ se llama el polinomio caracerístico
+
+\subsubsection{Prop de $p_f\; \lambda$}
+\begin{itemize}
+	\item $\lambda$ es autovalor iff $\lambda$ es raíz real de $p_f \; \lambda$
+	\item $p_f \; \lambda \in \R[\lambda]$
+	\item Se define $S_\lambda = \{v : fv = \lambda v\}$ al subespacio
+		asociado, o autoespacio
+	\item $\deg p_f = \dim \V$
+	\item el coeficiente principal de $p_f$ es $(-1)^{Dim \V}$
+\end{itemize}
+
+\section{Hallar Autovectores}
+Dado $f : \V \to \V$,
+con el métrodo anterior hallamos $\lambda \in \R$ tal que $p_f \; \lambda = 0$,
+entonces para hallar los autovectores asociados sólo tenemos que resolver el
+sistema homogéneo \[
+	(Mf - I\cdot \lambda)\cdot v = 0_\V
+\]
+Sabiendo que la matriz $(Mf - I\cdot \lambda)$ no es inversible, los $v$s
+que cumplen forman un subespacio no nulo
+
+\section{Autovalores y Autovectores de una matriz}
+Dado $A \in \R^{n \times n}$, se hacen las mismas definiciones que para la
+transformación lineal $f : \R^n \to \R^n, fv = A\cdot v$. Se tiene: \[
+	p_A \; \lambda = \det \; (A - \lambda I) = |A - \lambda I|
+	\] y \[
+	S_\lambda = \{v \in \R^n : A\cdot v = \lambda \cdot v\}
+\]
+
+\subsection{Propiedades}
+\begin{enumerate}
+	\item $\det A = 0 \iff p_A \; 0 = 0$, y tenemos $S_0 = Nu \; f$
+\end{enumerate}
+
+\section{Diagonalizabilidad}
+Una transformación lineal $f : \V \to \V$ es diagonalizable iff
+existe una base de $\V$ formada por autovectores de $f$
+
+Una definición equivalente es:
+
+Para transformaciones lineales, $f$ es diagonalizable si $M_B \;f $ es
+diagonal para alguna base $B_\V$ formada por los autovalores de $f$,
+y donde el valor en cada elemento de la diagonal es el autovalor asociado al
+autovector de esa columna
+
+Tenemos $Mf = C_{BE} \cdot M_B f \cdot C_{EB} = C_{BE} \cdot M_B f \cdot
+(C_{BE})^{-1}$
+
+Para matrices, $A$ es digonalizable si $A \sim D$ para alguna diagonal $D$,
+es decir, si existen $D$ diagonal y $C$ inversible
+tal que $A = C\cdot D \cdot C^{-1}$.
+Si esto pasa, luego necesariamente, tendremos
+\(
+D = \begin{bmatrix}
+	\lambda_1 & \dots & 0 \\
+	\vdots & \ddots & \vdots \\
+	0 & \dots & \lambda_n \\
+\end{bmatrix}
+\), y \(
+C = (v_i | \dots)
+\) con $v_i$ los autovectores y $\lambda_i$ sus autovalores asociados
+\subsection{Propiedad}
+\begin{itemize}
+	\item $S_\lambda \cap S_\mu = 0$ para $\lambda \neq \mu$
+	\item $\dim S_\lambda \geq 0$ Para todo autovalor $\lambda$
+	\item $\dim S_\lambda \leq mult_\lambda \; p_A$
+	\item $A$ es diagonalizable $\iff$ todas las raíces de $p_A$ son reales
+		y $\dim S_\lambda = mult_\lambda \; p_A$ para toda raíz $\lambda$ de
+		$p_A$. Para ver si esto es verdad alcanza con ver los rangos de
+		todas las matrices de la forma $Rg \;(A - I\lambda)$ con $\lambda$
+		autovalor
+\end{itemize}
+\subsubsection{Demo de $S_\lambda \cap S_\mu = 0$}
+Por absurdo, asumamos $0 \neq v \in S_\lambda \cap S_\mu$, entonces tenemos
+$A\cdot v = \lambda \cdot v = \mu \cdot v$, entonces $\lambda = \mu$.
+\subsection{Potencias de matrices diagonalizables}
+Si tenemos una matriz $A \in \R^{n\times n}$ escrita como $A = CDC^{-1}$ con
+$C$ inversible y $D$ diagonal, luego $A^n = CD^nC^{-1}$, para todo $n \in \Z$
+
+Elevar una matriz diagonal a una potencia es fácil, ya que alcanza con
+elevar cada elemento de la diagonal
+
+\subsubsection{Polinomios (y series polinómicas)}
+Si tenemos $fx = \sum a_ix^i$, podemos definir $fA = \sum a_iA^i = \sum
+a_iCD^iC^{-1} = C \left(\sum a_iD^i\right) C^{-1}$ = \(
+	C \cdot \begin{bmatrix}
+		f\; d_1 & 0 & \dots & 0 \\
+		0 & f \; d_2 & \dots & 0 \\
+		\vdots & \vdots & \ddots & \vdots \\
+		0 & 0 & \dots & f \; d_n \\
+	\end{bmatrix} \cdot C^{-1}
+\)
+
+\subsection{Autovalores de potencias de $A$}
+Si $\lambda$ es autovalor de $A$, luego $\lambda^2$ es autovalor de $A^2$
+Asimismo, si $v$ es autovector de $A$ con autovalor $\lambda$, tenemos que
+$v$ es autovector de $A^2$ con autovalor $\lambda^2$, luego $A$
+diagonalizable, luego $A^2$ diagonalizable.
+
+\section{Autovalores bajo Cambios de Base}
+Si los autovalores de $Mf$ son los mismos que los de $M_Bf$ para cualquier
+base $B$ de $\V$, y si $v$ es autovector correspondiente a $\lambda$ en
+$Mf$, luego $v_B$ es autovector correspondiente a $\lambda$ de la matrix
+$M_Bf$
+\end{document}

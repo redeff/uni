@@ -1,0 +1,92 @@
+\documentclass{article}
+\everymath{\displaystyle}
+\usepackage{mathtools}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{20pt}
+% \setlength{\linespread}{3pt}
+\linespread{1.1}
+\title{Estática de cuerpos puntuales y cuerpos sólidos}
+\date{}
+\begin{document}
+\maketitle
+\section{Cuerpos Puntuales}
+Se marca un punto fijo del objeto, y se presta atención sólo a ese punto.
+Cuando se trabajan con puntos vale que $\sum \overline{F} = m\overline{a}$
+
+\section{Cuerpos Sólidos Extensos (1D y 2D)}
+Tienen las siguientes propiedades:
+\begin{itemize}
+	\item Extensión: tienen más de un punto
+	\item Solidez: se pueden elegir y marcar dos puntos cualesquiera del
+		cuerpo, y al medir la distancia entre ellos, es siempre la misma
+		a lo largo del tiempo y bajo cualquier tipo de movimiento
+	\item Masa homogénea
+\end{itemize}
+
+Todo punto $P$ en el sólido tiene una velocidad dada por:
+$\overline{V_P} = \overline{\omega} \times \overline{R} + \overline{V_O}$,
+donde $O$ es el centro de masa, $\omega$ es el vector momento angular, y $R$
+es el vector hacia el centro ($\overline{R} = P - O$)
+
+Se cumple también que, si no hay rotación, entonces $\sum M_F = 0$, donde
+$M_F$ es el momento de la fuerza $F$, dado por $M_F = F \times (P - O)$, con
+$P$ punto de incidencia de la fuerza
+
+\begin{itemize}
+	\item $\sum F = 0 \iff $ No hay desplazamiento
+	\item $\sum M_F = 0 \iff $ No hay rotación
+\end{itemize}
+
+Entonces un objeto se mantiene estático sí y sólo sí $\sum F = 0$ y
+$\sum M_F = 0$
+
+\subsection{Centro de Momento}
+Un centro de momento $O$ en un objeto extenso es un punto a partir del cual
+se calculan los momentos de las fuerzas, y por el cual se hace de cuenta que
+el objeto va a girar
+
+El momento de una fuerza $F$ incidente en un punto $P$ con respecto a un
+centro de momento $O$ se calcula como $M_F = \pm |F|\cdot d$. El signo se
+define viendo si $F$ va horario ($-$) o antihorario ($+$) con respecto a
+$O$, y $d$ es la distancia entre $O$ y la recta por $P$ con dirección $F$.
+Las unidades del momento son $[M_F] = N\cdot m$.
+
+Si la fuerza se aplica de forma alineada con el centro, entonces el momento
+es cero (si podés elegir $O$, sirve para sacarte momentos de encima)
+
+\subsection{Ejemplo: Tabla horizontal balanceada}
+Si se tiene una tabla de cierta longitud, y se le aplican pesos conocidos a
+ambos extremos, y se quiere balancear horizontalmente la tabla agregándole
+un punto de vínculo, tenemos que plantear la ecuación con momentos:
+
+\[
+	\sum M_F = 0
+\]
+
+Para no tener que calcular el momento de la fuerza de vínculo, tomamos el
+punto de vínculo como centro del momento. Nos queda el sistema
+\[
+	\begin{cases}
+		\; F_1 \cdot d_1 - F_2 \cdot d_2 & = 0 \quad\text{Suma de los momentos} \\
+		\; d_1 + d_2 & = d \quad\text{Longitud total de la tabla}
+	\end{cases}
+\]
+Donde $F_i$s son las fuerzas aplicadas y $d_i$s son las distancias hasta el
+punto de vínculo, y $d$ es la longitud de la tabla, que es un sistema fácil
+de resolver
+
+\subsection{Ejemplo: Tabla inclinada balanceada}
+Se tiene una barra inclinada con dos objetos en las puntas. Para que sea un
+sist. estático, la fuerza que ejercen los objetos en la barra es igual a la
+fuerza peso, luego las fuerzas ejercidas en los extremos de la barra son de
+nuevo verticales. Si volvemos a plantear el sistema obtenemos:
+\[
+	\begin{cases}
+		\; \cos \alpha \cdot F_1 \cdot d_1 - \cos \alpha \cdot F_2 \cdot d_2 & = 0
+		\quad\text{Con $\alpha$ el ángulo con la horizontal} \\
+		\; d_1 + d_2 & = d \quad\text{Longitud total de la tabla}
+	\end{cases}
+\]
+Que es equivalente al sistema anterior, ya que los cosenos se tachan pq
+estan igualados a un $0$
+\end{document}

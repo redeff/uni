@@ -1,0 +1,72 @@
+\documentclass{article}
+\everymath{\displaystyle}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{10pt}
+\title{Hidrostática}
+\date{}
+\author{}
+\begin{document}
+\maketitle
+Va a mandar apuntes
+\section{Fluidos}
+Propiedades del fluido
+\begin{itemize}
+	\item Incomplesible
+	\item Ideal
+	\item Estático (los elementos del fluido se mueven, pero en una región
+		acotada)
+	\item Densidad ($\delta$)
+	\item Peso específico
+	\item Elementos del fluido (partes chiquititas con muchas moléculas que
+		componen el fluido)
+\end{itemize}
+\section{Superficie Libre}
+Son todos los elementos del fluido, en contacto con la superficie
+
+\section{Superficie Normal}
+Todas las partículas de un mismo fluido, en una misma superficie de nivel, y
+que se encuentran interconectado (arc-connected),
+tienen la misma presión hidrostática
+
+\section{Presión}
+Para todo punto del fluido, la presión en ese punto está dado por \(
+	P = h \delta g
+\), donde $g$ es la gravedad, $\delta$ la densidad y $h$ la distancia desde
+el punto hasta la superficie del fluido
+
+(En realidad da \(
+	P_a - P_b = \int_a^b \delta _x \cdot g _x\; dx
+\) para puntos $a$ y $b$ de fluido y una path entre los dos)
+
+\(
+[P] = m \cdot \frac{kg}{m^3} \cdot \frac{m}{s^2} = \frac{kg}{ms^2} =
+\frac{N}{m^2} = Pa
+\)
+
+\subsection{Presión Atmosférica}
+Como el peso de los elementos de fluido de la atmósfera es muy poco,
+asumimos que la presión atmosférica es igual a cualquier altura.
+
+\section{Tornichelli}
+\section{Vasos Comunicantes}
+\section{Gas Ideal}
+\(
+	PV = nRT
+\), donde $P$ es la presión, $V$ es el volumen, $n$ es la cantidad de moles
+de gas, $T$ es la temperatura absoluta, y $R = 8.31446 \;
+J\,K^{-1}\,mol^{-1}$
+
+\section{Principio de Arquímedes}
+El volumen de líquido desplazado por un objeto sumergido (volumen
+desalojado) es el igual al volumen del objeto
+
+Sobre todo objeto (total o parcialmente) sumergido, el líquido ejerce una
+fuerza de empuje, que es igual al peso del volumen de líquido desalojado.
+Tenemos $E = mg = V\delta g$, done $V$ es el volumen sumergido y $\delta$ es
+la densidad del fluido
+
+Si la densidad del objeto es igual a la del fluído, éste flota iff está todo
+sumergido
+\end{document}

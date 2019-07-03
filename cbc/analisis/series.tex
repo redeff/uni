@@ -1,0 +1,134 @@
+\documentclass{article}
+\everymath{\displaystyle}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{10pt}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\def\R{\mathbb{R}}
+\title{Series}
+\date{}
+\author{}
+\begin{document}
+\maketitle
+\section{Criterios de Convergencia}
+Para que una serie \(
+\sum_{n \ge 1} a_n
+\) converja, es necesario pero no suficiente que \(
+\lim_{n \to \infty} a_n = 0
+\)
+\section{Series geométricas}
+Si tenemos una serie de la forma $a_i = r^i$, converge exactamente si $|r| <
+1$, y da \(
+\sum_ {n = 0} a_n = \frac{1}{1 - r}
+\)
+\section{Linearidad}
+Tenemos \(
+\sum (a_i + b_i) = \sum a_i + \sum b_i
+\), y $\sum (\lambda \cdot a_i) = \lambda \cdot \sum a_i$
+\section{Serie armónica}
+Si tomamos la sucesión $a_i = \frac{1}{i}$, y tenemos \(
+	S_n = \sum^n a_i
+\), luego tenemos, por inducción, que $S_{2^k-1} \leq \frac{k}{2}$.
+Fijémonos $S_{2^1-1} \leq \frac{1}{2}$, y \[
+S_{2^k-1} =
+\]\[S_{2^{k-1}-1} + \sum_{2^{k-1}}^{2^k-1} a_i \geq
+\]\[
+S_{2^{k-1}-1} + \sum_{2^{k-1}}^{2^k-1} \frac{1}{2^k} =
+\]\[
+S_{2^{k-1}-1} + \frac{2^{k-1}}{2^k} =
+\]\[
+S_{2^{k-1}-1} + \frac{1}{2} \geq \frac{k}{2}
+\]
+Luego no converge.
+
+\section{Series de términos no negativos}
+Son las que cumplen $a_i \geq 0$.
+Tenemos entonces $S_{n+1} = S_{n} + a_{n+1} \geq S_n$, luego la sucesión
+$S_i$ es creciente, luego alcanza con una cota superior para garantizar que
+el límite existe.
+\subsection{Criterio de Comparación (En series No Negativas)}
+Si $a_n \leq c_n$ para casi todo $n$ y $\sum c_i$ converge, entonces $\sum
+a_i$ también converge.
+
+\subsection{Criterio del Límite (Series No Negativas)}
+Si $\exists \lim \frac{a_n}{c_n} \in \R$ y $c_n$ converge, luego $a_n$ también
+converge
+
+Si $\exists \lim \frac{a_n}{d_n} \in \R^+ + \{+\infty\}$
+y $d_n$ diverge, luego $a_n$ también diverge
+
+Equivalentemente, si $\exists \lim \frac{a_n}{b_n} \in \R^+$, luego $a_n$ y
+$b_n$ se comportan igual
+
+Se demuestran tomando $\lim \frac{a_i}{b_i} \in \R \to m \cdot b_i \leq a_i
+\leq M \cdot b_i$ Para casi todo $i$, luego $a$ se comporta como $b$ por
+linearidad y criterio de comparación
+\subsection{Criterio de Cauchy}
+Si tenemos $a_i$ tal que $L = \lim \; (a_n)^\frac{1}{n}$, luego si $L > 1$,
+entonces si $L < 1$ entonces $\sum^{\infty} a_i$ converge, y si $L > 1$,
+entonces $\sum^{\infty} a_i$ diverge.
+
+\subsection{Criterio de D'Alambert}
+Anda también para series (igual que cauchy)
+
+\section{D'Alambert implica Cauchy}
+si $\exists \lim_{n \to \infty} \frac{a_{n+1}}{a_n} = \ell$, luego \(
+\exists \lim_{n \to \infty} \sqrt[n]{a_n} = \ell
+\)
+
+Notemos que decir \(
+\exists \lim_{n \to \infty} \sqrt[n]{a_n} = \ell
+\) es equivalente a \(
+	a_n \approx \ell^n
+\), es decir lo estamos comparando con una exponencial.
+\section{Criterio Integral de Cauchy}
+Sea $f : [1, +\infty) \to \R^+$ decreciente, luego si tomamos:
+\[
+	S_n = \sum_1^n fi \quad \text{y} \quad I_n = \int_1^n fx \; dx
+\]
+Entonces $S_n$ y $I_n$ tienen el mismo comportamiento
+
+Esto se ve ya que $S_n - f1 \leq I_n \leq S_{n-1}$
+El límite $\lim _{n \to +\infty} I_n$ se denomina $\int_1^{+\infty} fx \;
+dx$, o integral impropia
+
+\subsection{Series $p$}
+las series $p$ son las de la forma $\sum \frac{1}{n^p}$.
+
+Notemos que para $p \leq 0$ diverge, ya que los términos son crecientes.
+
+Para $p \geq 2$ converge, ya que teníamos que para $p = 2$ converge y
+podemos usar el criterio de comparación.
+
+Para $0 < p \leq 1$ diverge, ya que para $p = 1$ diverge y podemos usar
+criterio de comparación.
+
+Entonces sólo falta analizar convergencia de $1 < p < 2$.
+Usamos el criterio integral de cauchy. Nos definimos $f :
+[1, +\infty) \to \R^+; \; fx = \frac{1}{x^p}$
+
+La derivada $f'x = -\frac{p}{x^{p+1}} < 0$, luego $f$ decrece
+Luego la $p$-serie tiene el mismo comportamiento que:
+\[\int_1^{+\infty} \frac{1}{x^p} = \left.
+	-\frac{1}{(p-1)x^{p-1}}\right|_1^{+\infty}
+\]
+Que converge ya que $p-1 > 0$, entonces $\frac{1}{x^{p-1}}$ converge
+
+Juntando todo tenemos que la $p$-serie converge iff $p > 1$
+
+\section{Series Alternadas}
+\subsection{Criterio de Leibniz}
+Dado $a_i \geq 0$, $a_i \geq a_{i+1}$, y $\lim a_i = 0$, luego la serie
+alternada \[
+	\sum (-1)^ia_i
+\]
+Converge
+\section{Series de Potencias}
+Si se tiene una serie de la forma $\sum a_nx^n$ se llama una serie de
+potencias.
+Los valores de $x$ para los cuales converge forman una pelotita de centro
+$0$.
+Si tomamos $\lim \sqrt[n]{a_n} = \ell$, luego el radio de la pelotita donde
+converge es $R = \frac{1}{\ell}$, es decir, para $|x| < R$ converge, y para
+$|x| > R$ diverge. Para $|x| = R$ no sé.
+\end{document}
